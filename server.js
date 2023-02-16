@@ -3,9 +3,8 @@ const app = express();
 
 const PORT = 4001;
 
-app.get('/', (req, res) => {
-    res.send("Hello world");
-})
+const apiRouter = require('./routes/api');
+app.use('/api/envelopes', apiRouter);
 
 app.listen(PORT, () => {
     console.log(`The server is on http://localhost:${PORT}`);
